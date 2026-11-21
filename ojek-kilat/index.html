@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ojek Kilat — motorbike courier</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Ojek Kilat</h1>
+    <p>A small motorbike courier. We quote delivery fees and time windows — no bookings, no tracking.</p>
+    <nav aria-label="Page">
+      <a href="#zones-heading">Delivery zones</a>
+      <a href="#assistant-heading">Ask the assistant</a>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="zones-heading">
+      <h2 id="zones-heading">Delivery zones</h2>
+      <p id="hours-note"></p>
+      <p id="service-note"></p>
+      <p>Food partner: <a id="warung-link" href="https://adara1992.github.io/warung-makan-agent/warung-makan/">Warung Makan</a></p>
+      <table>
+        <caption>Delivery fees</caption>
+        <thead>
+          <tr><th scope="col">Zone</th><th scope="col">Fee</th><th scope="col">Time</th></tr>
+        </thead>
+        <tbody id="fee-rows"></tbody>
+      </table>
+      <p class="demo-note">This is a demo site. Quotes are simulated: no payment is taken and no food is delivered.</p>
+    </section>
+
+    <section id="assistant" aria-labelledby="assistant-heading">
+      <h2 id="assistant-heading">Ask the assistant</h2>
+      <p id="assistant-status">Ask about delivery zones, fees and time windows.</p>
+      <div id="agent-app"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Ojek Kilat — a demo site for the Open Agentic Web Challenge. Quotes are simulated.</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+  <script type="module" src="site.js"></script>
+  <script type="module" src="chat-follow.js"></script>
+</body>
+</html>

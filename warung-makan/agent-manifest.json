@@ -1,0 +1,82 @@
+{
+  "actions": {
+    "agentTools": [
+      "get_warung_state",
+      "add_to_cart",
+      "set_cart",
+      "checkout_demo_order"
+    ],
+    "bridge": "./bridge/action-bridge.html",
+    "module": "./site-actions.js",
+    "version": 1
+  },
+  "agent_mcp": {
+    "available": false,
+    "front_man": "warung_assistant",
+    "network": "warung_makan",
+    "protocol": "nsdeploy-agent-mcp/v1",
+    "reason": "This is a static bundle; a public MCP facade requires an application host."
+  },
+  "allowed_peers": [
+    "https://adara1992.github.io"
+  ],
+  "brand": "Warung Makan Assistant",
+  "deployment": {
+    "browser_mock": false,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "mode": "static",
+    "public_mcp_facade": false,
+    "self_contained_runtime": true
+  },
+  "linking": {
+    "exports": [
+      {
+        "aliases": [
+          "warung_makan",
+          "warung_assistant"
+        ],
+        "front_man": "warung_assistant",
+        "network": "warung_makan",
+        "url": "warung_makan"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    },
+    "protocol": "nsdeploy-link/v1"
+  },
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "byok_router": "https://api.otari.ai/api/v1",
+    "mock": false
+  },
+  "networks": [
+    {
+      "description": "Ask about the menu, add dishes to your cart, or place a demo pickup or delivery order.",
+      "front_man": "warung_assistant",
+      "hocon": "./warung_makan.network.json",
+      "name": "warung_makan",
+      "sample_queries": [
+        "Which dishes are vegetarian?",
+        "How spicy is the soto ayam?",
+        "Add two nasi goreng and one es teh to my cart.",
+        "I would like to check out for delivery to Zone B. What is the delivery fee?",
+        "What is the status of my latest demo order?",
+        "Can you book a table for tonight?"
+      ],
+      "tags": [
+        "agentified-website"
+      ]
+    }
+  ],
+  "peer_policy": {
+    "deny_origins": [],
+    "mode": "closed",
+    "note": "Calls only the partner sites in allowed_peers, after the visitor agrees."
+  },
+  "theme": {
+    "primary": "#92400e"
+  }
+}

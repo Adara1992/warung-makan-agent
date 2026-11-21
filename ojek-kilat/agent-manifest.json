@@ -1,0 +1,76 @@
+{
+  "actions": {
+    "agentTools": [
+      "get_ojek_state",
+      "quote_delivery"
+    ],
+    "bridge": "./bridge/action-bridge.html",
+    "module": "./site-actions.js",
+    "version": 1
+  },
+  "agent_mcp": {
+    "available": false,
+    "front_man": "ojek_assistant",
+    "network": "ojek_kilat",
+    "protocol": "nsdeploy-agent-mcp/v1",
+    "reason": "This is a static bundle; a public MCP facade requires an application host."
+  },
+  "allowed_peers": [],
+  "brand": "Ojek Kilat Assistant",
+  "deployment": {
+    "browser_mock": false,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "mode": "static",
+    "public_mcp_facade": false,
+    "self_contained_runtime": true
+  },
+  "linking": {
+    "exports": [
+      {
+        "aliases": [
+          "ojek_kilat",
+          "ojek_assistant"
+        ],
+        "front_man": "ojek_assistant",
+        "network": "ojek_kilat",
+        "url": "ojek_kilat"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    },
+    "protocol": "nsdeploy-link/v1"
+  },
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "byok_router": "https://api.otari.ai/api/v1",
+    "mock": false
+  },
+  "networks": [
+    {
+      "description": "Ask about delivery zones, fees and time windows.",
+      "front_man": "ojek_assistant",
+      "hocon": "./ojek_kilat.network.json",
+      "name": "ojek_kilat",
+      "sample_queries": [
+        "How much does delivery to Zone B cost, and how long does it take?",
+        "Which zones do you deliver to?",
+        "What is the delivery fee for Zone C?",
+        "Can you pick up my order now?"
+      ],
+      "tags": [
+        "agentified-website"
+      ]
+    }
+  ],
+  "peer_policy": {
+    "deny_origins": [],
+    "mode": "closed",
+    "note": "Local agents and page-local actions only."
+  },
+  "theme": {
+    "primary": "#0f766e"
+  }
+}

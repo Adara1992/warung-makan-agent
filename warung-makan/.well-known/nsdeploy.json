@@ -1,0 +1,18 @@
+{
+  "exports": [
+    {
+      "aliases": [
+        "warung_makan",
+        "warung_assistant"
+      ],
+      "front_man": "warung_assistant",
+      "network": "warung_makan",
+      "url": "warung_makan"
+    }
+  ],
+  "imports": [],
+  "link_updates": {
+    "mode": "browser-local"
+  },
+  "protocol": "nsdeploy-link/v1"
+}

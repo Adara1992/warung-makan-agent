@@ -1,0 +1,11 @@
+{
+  "networks": [
+    {
+      "name": "warung_makan"
+    }
+  ],
+  "actions": {
+    "version": 1,
+    "module": "./bridge-actions.js"
+  }
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Warung Makan — Indonesian food stall</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Warung Makan</h1>
+    <p>A small Indonesian food stall. Order a demo meal below — no payment, no real delivery.</p>
+    <nav aria-label="Page">
+      <a href="#menu-heading">Menu</a>
+      <a href="#cart-heading">Your cart</a>
+      <a href="#checkout-heading">Checkout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="menu-heading">
+      <h2 id="menu-heading">Menu</h2>
+      <p id="hours-note"></p>
+      <p id="halal-note"></p>
+      <p id="delivery-note"></p>
+      <p>Delivery partner: <a id="ojek-link" href="https://adara1992.github.io/warung-makan-agent/ojek-kilat/">Ojek Kilat</a></p>
+      <table>
+        <caption>Delivery fees</caption>
+        <thead>
+          <tr><th scope="col">Zone</th><th scope="col">Fee</th><th scope="col">Time</th></tr>
+        </thead>
+        <tbody id="fee-rows"></tbody>
+      </table>
+      <div id="menu-items"></div>
+    </section>
+
+    <section aria-labelledby="cart-heading">
+      <h2 id="cart-heading">Your cart</h2>
+      <p id="empty-cart">Your cart is empty.</p>
+      <ul id="cart-items"></ul>
+      <p>Total: <strong id="cart-total">Rp0</strong></p>
+      <p id="cart-status" aria-live="polite"></p>
+    </section>
+
+    <section aria-labelledby="checkout-heading">
+      <h2 id="checkout-heading">Checkout (demo)</h2>
+      <p class="demo-note">This is a demo order. No payment is taken and no food is sent.</p>
+      <form id="checkout-form" action="#" method="get">
+        <label>Your name
+          <input id="customer-name" name="customerName" type="text" autocomplete="name" required maxlength="80">
+        </label>
+        <label>How would you like to receive your order?
+          <select id="fulfillment" name="fulfillment">
+            <option value="pickup">Pickup</option>
+            <option value="delivery">Delivery</option>
+          </select>
+        </label>
+        <div id="delivery-fields" hidden>
+          <label>Delivery zone
+            <select id="zone" name="zone">
+              <option value="A">Zone A — Central (0–3 km)</option>
+              <option value="B">Zone B — Nearby (3–6 km)</option>
+              <option value="C">Zone C — Outer (6–10 km)</option>
+            </select>
+          </label>
+          <label>Delivery address
+            <textarea id="address" name="address" rows="2" maxlength="300"></textarea>
+          </label>
+        </div>
+        <label>Requested time (optional, HH:MM, today)
+          <input id="order-time" name="orderTime" type="time">
+        </label>
+        <p id="checkout-error" role="alert"></p>
+        <button id="place-order" type="submit">Place demo order</button>
+      </form>
+      <div id="confirmation" hidden tabindex="-1">
+        <h3>Order received</h3>
+        <p id="order-summary"></p>
+        <ul id="order-items"></ul>
+        <p id="order-total"></p>
+      </div>
+    </section>
+
+    <section id="assistant" aria-labelledby="assistant-heading">
+      <h2 id="assistant-heading">Ask the assistant</h2>
+      <p id="assistant-status">Ask about the menu, add dishes to your cart, or check out.</p>
+      <div id="agent-app"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Warung Makan — a demo site for the Open Agentic Web Challenge. Orders are simulated.</p>
+  </footer>
+
+  <script type="module" src="script.js"></script>
+  <script type="module" src="site.js"></script>
+  <script type="module" src="chat-follow.js"></script>
+</body>
+</html>

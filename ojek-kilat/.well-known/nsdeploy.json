@@ -1,0 +1,18 @@
+{
+  "exports": [
+    {
+      "aliases": [
+        "ojek_kilat",
+        "ojek_assistant"
+      ],
+      "front_man": "ojek_assistant",
+      "network": "ojek_kilat",
+      "url": "ojek_kilat"
+    }
+  ],
+  "imports": [],
+  "link_updates": {
+    "mode": "browser-local"
+  },
+  "protocol": "nsdeploy-link/v1"
+}
