@@ -29,6 +29,10 @@
     # Maximum model/tool round trips per agent invocation (runtime default 12).
     "max_steps": 12,
 
+    # Maximum wall-clock seconds per agent invocation (NandaSeal MVP 0.3 check;
+    # same 600 s bound as the pizza example).
+    "max_execution_seconds": 600,
+
     # Turns on the render_cruse tool and per-invocation CRUSE context.
     "cruse": {
         "version": 1
